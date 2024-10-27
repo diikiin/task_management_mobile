@@ -7,8 +7,4 @@ data class Project(
     private var _tasks: MutableList<Task>
 ) {
     val tasks get() = _tasks
-
-    fun addTask(task: Task) {
-        _tasks.add(task)
-    }
 }

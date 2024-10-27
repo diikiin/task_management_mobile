@@ -20,7 +20,6 @@ class ProjectDetailFragment : Fragment(R.layout.fragment_project_detail) {
     private lateinit var projectTitle: TextView
     private lateinit var projectDescription: TextView
     private lateinit var tasksRv: RecyclerView
-    private lateinit var adapter: TasksAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -44,7 +43,6 @@ class ProjectDetailFragment : Fragment(R.layout.fragment_project_detail) {
 
         projectTitle.text = project.title
         projectDescription.text = project.description
-        adapter = TasksAdapter(project.tasks)
-        tasksRv.adapter = adapter
+        tasksRv.adapter = TasksAdapter(project.tasks)
     }
 }

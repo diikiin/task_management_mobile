@@ -1,9 +1,12 @@
 package com.dikin.taskmanagement.fragments
 
+import android.app.AlertDialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
@@ -21,6 +24,7 @@ class ProjectFragment : Fragment(R.layout.fragment_project) {
     private lateinit var projects: List<Project>
     private lateinit var rv: RecyclerView
     private lateinit var adapter: ProjectsAdapter
+    private lateinit var createProject: Button
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -41,5 +45,29 @@ class ProjectFragment : Fragment(R.layout.fragment_project) {
             findNavController().navigate(action)
         }
         rv.adapter = adapter
+        createProject = binding.createProject
+
+        createProject.setOnClickListener {
+            showCreateProjectDialog()
+        }
+    }
+
+    private fun showCreateProjectDialog() {
+        val dialogView = layoutInflater.inflate(R.layout.create_project, null)
+        val titleInput = dialogView.findViewById<EditText>(R.id.create_project_title_et)
+        val descriptionInput = dialogView.findViewById<EditText>(R.id.create_project_description_et)
+
+        AlertDialog.Builder(requireContext())
+            .setTitle("Add Task")
+            .setView(dialogView)
+            .setPositiveButton("Add") { _, _ ->
+                val title = titleInput.text.toString()
+                val description = descriptionInput.text.toString()
+
+                MockDataProvider.addProject(title, description)
+                adapter.notifyDataSetChanged()
+            }
+            .setNegativeButton("Cancel", null)
+            .show()
     }
 }
