@@ -2,15 +2,30 @@
 <navigation xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/nav_graph">
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/tasks_fragment">
 
     <fragment
         android:id="@+id/tasks_fragment"
-android:name="com.dikin.taskmanagement.fragments.TaskFragment"
-tools:layout="@layout/fragment_task"/>
+        android:name="com.dikin.taskmanagement.fragments.TaskFragment"
+        tools:layout="@layout/fragment_task" />
 
     <fragment
         android:id="@+id/projects_fragment"
+        android:name="com.dikin.taskmanagement.fragments.ProjectFragment"
+        tools:layout="@layout/fragment_project">
+        <action
+            android:id="@+id/action_projects_fragment_to_project_detail_fragment"
+            app:destination="@id/project_detail_fragment" />
+    </fragment>
 
+    <fragment
+        android:id="@+id/project_detail_fragment"
+        android:name="com.dikin.taskmanagement.fragments.ProjectDetailFragment"
+        tools:layout="@layout/fragment_project">
+        <argument
+            android:name="projectId"
+            app:argType="integer" />
+    </fragment>
 
 </navigation>

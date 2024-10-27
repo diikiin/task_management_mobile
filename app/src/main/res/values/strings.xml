@@ -2,7 +2,11 @@
     <string name="app_name">Task Management</string>
     <string name="task_management">Task Management</string>
     <string name="add_task">Add Task</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="project_management">Project Management</string>
+    <string name="tasks">Tasks</string>
+    <string name="projects">Projects</string>
+    <string name="description">Description:</string>
+    <string name="priority">Priority:</string>
+    <string name="create_project">Create Project</string>
+    <string name="project_tasks">Project tasks:</string>
 </resources>

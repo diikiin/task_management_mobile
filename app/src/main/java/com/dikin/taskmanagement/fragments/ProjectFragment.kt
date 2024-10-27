@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
 import com.dikin.taskmanagement.R
 import com.dikin.taskmanagement.adapters.ProjectsAdapter
@@ -34,7 +35,11 @@ class ProjectFragment : Fragment(R.layout.fragment_project) {
 
         projects = MockDataProvider.projects
         rv = binding.projectRv
-        adapter = ProjectsAdapter(projects)
+        adapter = ProjectsAdapter(projects) { project ->
+            val action =
+                ProjectFragmentDirections.actionProjectsFragmentToProjectDetailFragment(project.id)
+            findNavController().navigate(action)
+        }
         rv.adapter = adapter
     }
 }

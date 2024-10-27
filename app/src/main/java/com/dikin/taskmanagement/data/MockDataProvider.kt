@@ -2,11 +2,11 @@ package com.dikin.taskmanagement.data
 
 object MockDataProvider {
 
+    val projects = getAllProjects()
     val tasks = getAllTasks()
-    val projects = getProjects()
     private var taskId = 0
 
-    private fun getProjects(): MutableList<Project> {
+    private fun getAllProjects(): MutableList<Project> {
         return mutableListOf(
             Project(1, "Task Management", "Create simple task management project", getTasks1()),
             Project(2, "Instagram", "Crate simple instagram project", getTasks2())
@@ -15,7 +15,7 @@ object MockDataProvider {
 
     private fun getAllTasks(): MutableList<Task> {
         val tasks = mutableListOf<Task>()
-        projects.forEach { p -> tasks.addAll(p.tasks) }
+        getAllProjects().forEach { p -> tasks.addAll(p.tasks) }
         return tasks
     }
 

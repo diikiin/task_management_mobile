@@ -20,8 +20,8 @@ class TasksAdapter(private val tasks: List<Task>) :
         @SuppressLint("SetTextI18n")
         fun bind(task: Task) {
             taskTitle.text = task.title
-            taskDescription.text = "Description: ${task.description}"
-            taskPriority.text = "Priority: ${task.priority}"
+            taskDescription.text = task.description
+            taskPriority.text = task.priority.name
         }
     }
 

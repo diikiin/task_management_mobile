@@ -2,6 +2,13 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/"
+        android:id="@+id/tasks_fragment"
+        android:icon="@drawable/tasks"
+        android:title="@string/tasks" />
+
+    <item
+        android:id="@+id/projects_fragment"
+        android:icon="@drawable/projects"
+        android:title="@string/projects" />
 
 </menu>
