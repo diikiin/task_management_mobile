@@ -58,7 +58,7 @@ class ProjectFragment : Fragment(R.layout.fragment_project) {
         val descriptionInput = dialogView.findViewById<EditText>(R.id.create_project_description_et)
 
         AlertDialog.Builder(requireContext())
-            .setTitle("Add Task")
+            .setTitle("Create Project")
             .setView(dialogView)
             .setPositiveButton("Add") { _, _ ->
                 val title = titleInput.text.toString()

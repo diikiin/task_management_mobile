@@ -25,7 +25,12 @@ object MockDataProvider {
 
     private fun getAllProjects(): MutableList<Project> {
         return mutableListOf(
-            Project(projectId++, "Task Management", "Create simple task management project", getTasks1()),
+            Project(
+                projectId++,
+                "Task Management",
+                "Create simple task management project",
+                getTasks1()
+            ),
             Project(projectId++, "Instagram", "Crate simple instagram project", getTasks2())
         )
     }
