@@ -1,7 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
     alias(libs.plugins.kotlin.android)
-//    alias(libs.plugins.ksp)
     alias(libs.plugins.navigation.safeargs)
 }
 
@@ -80,7 +79,4 @@ dependencies {
 
     debugImplementation(libs.androidx.ui.tooling)
     debugImplementation(libs.androidx.ui.test.manifest)
-
-//    implementation(libs.glide)
-//    ksp(libs.glide.compiler)
 }
